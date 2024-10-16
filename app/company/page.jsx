@@ -12,9 +12,9 @@ function CompanyPage() {
     const [isJobContent1Visible, setJobContent1Visible] = useState(true); // State for job Content1
     const [isJobContent2Visible, setJobContent2Visible] = useState(true); // State for job Content2
     const jobs = [
-        { title: 'Senior Front-End Developer', candidates: 18 },
-        { title: 'Marketing Executive', candidates: 7 },
-        { title: 'Data Analyst', candidates: 12 }
+        { title: 'Senior Front-End Developer', candidates: 1 },
+        { title: 'Marketing Executive', candidates: 1 },
+        { title: 'Data Analyst', candidates: 1 }
     ];
 
     const toggleJobContent1 = () => {
@@ -60,18 +60,6 @@ function CompanyPage() {
 
                     {isJobContent1Visible && ( // Show this content only when isJobContent1Visible is true
                         <>
-                            {/* Filter Section */}
-                            <div className="flex justify-between items-center mb-5">
-                                <div className="flex space-x-2">
-                                    <button className="bg-gray-200 px-3 py-1 rounded-full">Age 21-28</button>
-                                    <button className="bg-gray-200 px-3 py-1 rounded-full">Skill: Sketch, Prototyping</button>
-                                </div>
-                                <div className="flex space-x-3">
-                                    <button className="bg-gray-200 p-2 rounded">Filter</button>
-                                    <button className="bg-gray-200 p-2 rounded">Grid View</button>
-                                </div>
-                            </div>
-
                             {/* Candidate List */}
                             <div className="grid grid-cols-4 gap-5">
                                 {/* Candidate 1 */}
@@ -89,21 +77,11 @@ function CompanyPage() {
                                     <p className="font-bold text-red-500">92%</p>
                                 </div>
                                 {/* Candidate 3 */}
-                                <div className="bg-purple-600 text-white p-5 rounded shadow">
+                                <div className="bg-white p-5 rounded shadow">
                                     <h3 className="text-xl font-bold">Jade Wilson</h3>
                                     <p>28 Years</p>
                                     <p className="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                                    <div className="flex space-x-2 mt-3">
-                                        <button className="bg-white text-purple-600 p-2 rounded-full">
-                                            <FontAwesomeIcon icon={faEye} />
-                                        </button>
-                                        <button className="bg-white text-purple-600 p-2 rounded-full">
-                                            <FontAwesomeIcon icon={faCheck} />
-                                        </button>
-                                        <button className="bg-white text-purple-600 p-2 rounded-full">
-                                            <FontAwesomeIcon icon={faTimes} />
-                                        </button>
-                                    </div>
+                                    <p className="font-bold text-red-500">92%</p>
                                 </div>
                             </div>
                         </>
@@ -130,17 +108,6 @@ function CompanyPage() {
 
                     {isJobContent2Visible && ( // Show this content only when isJobContent2Visible is true
                         <>
-                            {/* Filter Section */}
-                            <div className="flex justify-between items-center mb-5">
-                                <div className="flex space-x-2">
-                                    <button className="bg-gray-200 px-3 py-1 rounded-full">Age 21-28</button>
-                                    <button className="bg-gray-200 px-3 py-1 rounded-full">Skill: Sketch, Prototyping</button>
-                                </div>
-                                <div className="flex space-x-3">
-                                    <button className="bg-gray-200 p-2 rounded">Filter</button>
-                                    <button className="bg-gray-200 p-2 rounded">Grid View</button>
-                                </div>
-                            </div>
 
                             {/* Candidate List */}
                             <div className="grid grid-cols-4 gap-5">
@@ -159,21 +126,11 @@ function CompanyPage() {
                                     <p className="font-bold text-red-500">85%</p>
                                 </div>
                                 {/* Candidate 3 */}
-                                <div className="bg-purple-600 text-white p-5 rounded shadow">
+                                <div className="bg-white p-5 rounded shadow">
                                     <h3 className="text-xl font-bold">Charlie Brown</h3>
                                     <p>29 Years</p>
                                     <p className="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                                    <div className="flex space-x-2 mt-3">
-                                        <button className="bg-white text-purple-600 p-2 rounded-full">
-                                            <FontAwesomeIcon icon={faEye} />
-                                        </button>
-                                        <button className="bg-white text-purple-600 p-2 rounded-full">
-                                            <FontAwesomeIcon icon={faCheck} />
-                                        </button>
-                                        <button className="bg-white text-purple-600 p-2 rounded-full">
-                                            <FontAwesomeIcon icon={faTimes} />
-                                        </button>
-                                    </div>
+                                    <p className="font-bold text-red-500">92%</p>
                                 </div>
                             </div>
                         </>

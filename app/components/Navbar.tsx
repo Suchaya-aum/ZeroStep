@@ -7,29 +7,32 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
-    return (
-
-        <nav className='bg-black text-white py-5 px-10'>
+  return (
+      <nav className='bg-black text-white py-5 px-10'>
           <div className="container mx-auto">
-          <div className='flex justify-between items-center'>
-            <Link href="/">Logo here</Link>
-            <ul className='flex items-center'>
-              <li className='mx-3'><Link href="/" legacyBehavior><a>Search a job</a></Link></li>
-              <li className='mx-3'><Link href="/createResume" legacyBehavior><a>Create resume</a></Link></li>
-              <li className='mx-3'><Link href="/history" legacyBehavior><a>Applicant history</a></Link></li>
-              <li className='mx-3'><Link href="/login" legacyBehavior><a>Sign in</a></Link></li>
-              <li className='mx-3'>
-                <Link href="/profile" legacyBehavior>
-                  <a style={styles.profileIconContainer}>
-                    <FontAwesomeIcon icon={faUser} style={styles.profileIcon} />
-                  </a>
-                </Link>
-              </li>
-              <li className='mx-3'><Link href="/company" legacyBehavior><a>Company site</a></Link></li>
-            </ul>
+              <div className='flex justify-start items-center'>
+                  {/* โลโก้ */}
+                  <Link href="/" className="mr-10">Logo here</Link>
+                  
+                  {/* เมนูรายการ */}
+                  <ul className='flex items-center'>
+                      <li className='mx-3'><Link href="/" legacyBehavior><a>Search a job</a></Link></li>
+                      <li className='mx-3'><Link href="/createResume" legacyBehavior><a>Create resume</a></Link></li>
+                      <li className='mx-3'><Link href="/history" legacyBehavior><a>Applicant history</a></Link></li>
+                      <li className='mx-3'>
+                          <Link href="/profile" legacyBehavior>
+                              <a style={styles.profileIconContainer}>
+                                  <FontAwesomeIcon icon={faUser} style={styles.profileIcon} />
+                                  <span style={styles.profileText}>Profile</span>
+                              </a>
+                          </Link>
+                      </li>
+                      <li className='mx-3'><Link href="/login" legacyBehavior><a>Sign in</a></Link></li>
+                      <li className='mx-3'><Link href="/company" legacyBehavior><a>Company site</a></Link></li>
+                  </ul>
+              </div>
           </div>
-        </div>
-    </nav>
+      </nav>
   );
 }
 
@@ -46,6 +49,9 @@ const styles = {
     maxHeight: '20px',
     width: '100%',
     height: 'auto', // อัตราส่วนคงที่
+  },
+  profileText: {
+    marginLeft: '8px',
   },
 };
 

@@ -1,11 +1,23 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from "react";
 import Image from 'next/image';
 import NavbarCom from '../components/NavbarCom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
-function page() {
+const Profile = () => {
+  // State to manage if the input fields are editable
+  const [isEditable, setIsEditable] = useState(false);
+  const [firstName, setFirstName] = useState("สรวิทย์");
+  const [lastName, setLastName] = useState("ด่ารงคงกระพันธุ์");
+
+// Toggle edit mode on button click
+const handleEditClick = () => {
+  setIsEditable((prev) => !prev); // Toggle the edit mode
+};
+
   return (
     <div>
         <NavbarCom />
@@ -36,21 +48,27 @@ function page() {
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <p className="font-semibold">ชื่อ</p>
+                  <label className="font-semibold">ชื่อ</label>
                   <input
                     type="text"
-                    value="สิรวิทย์"
-                    className="w-full p-2 mt-1 border rounded-md"
-                    readOnly
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    readOnly={!isEditable} // Toggle readOnly based on state
+                    className={`w-full p-2 mt-1 border ${
+                      isEditable ? "border-blue-500" : "border-gray-300"
+                    } rounded-md`}
                   />
                 </div>
                 <div>
-                  <p className="font-semibold">นามสกุล</p>
+                  <label className="font-semibold">นามสกุล</label>
                   <input
                     type="text"
-                    value="ด่ารงคงกระพันธุ์"
-                    className="w-full p-2 mt-1 border rounded-md"
-                    readOnly
+                    value={lastName} // Use the lastName state
+                    onChange={(e) => setLastName(e.target.value)} // Update last name state
+                    readOnly={!isEditable} // Toggle readOnly based on state
+                    className={`w-full p-2 mt-1 border ${
+                      isEditable ? "border-blue-500" : "border-gray-300"
+                    } rounded-md`}
                   />
                 </div>
               </div>
@@ -98,7 +116,10 @@ function page() {
                   <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 transition">
                     Create resume
                   </button>
-                  <button className="px-4 py-2 bg-gray-300 rounded-md hover:bg-gray-400 transition">
+                  <button 
+                  className="px-4 py-2 bg-gray-300 rounded-md hover:bg-gray-400 transition"
+                  onClick={handleEditClick} // Call edit function on click
+                  >
                     Edit profile
                   </button>
               </div>
@@ -109,4 +130,4 @@ function page() {
   )
 }
 
-export default page
+export default Profile;

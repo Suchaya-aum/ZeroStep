@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import NavbarCom from '../components/NavbarCom';
+import Navbar from "../components/Navbar";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
@@ -8,7 +8,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 function page() {
   return (
     <div>
-        <NavbarCom />
+        <Navbar />
         
         <div className="flex min-h-screen bg-gray-100">
         {/* Sidebar */}
